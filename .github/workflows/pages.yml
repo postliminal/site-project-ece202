@@ -25,11 +25,9 @@ jobs:
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       # if: github.ref == 'refs/heads/main'
-      env:
-        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        EXTERNAL_REPOSITORY: postliminal/ece202-fall21-project
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./public
       with:
-        emptyCommits: false
-        commitMessage: ${{ github.event.head_commit.message }}
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        external_repository: postliminal/ece202-fall21-project
+        publish_branch: gh-pages
+        publish_dir: ./public
+        commit_message: ${{ github.event.head_commit.message }}
