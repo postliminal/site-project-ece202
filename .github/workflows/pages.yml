@@ -7,11 +7,12 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v1
-      # with:
-      #   submodules: true
+    - uses: actions/checkout@v2
+      with:
+       submodules: true
+       fetch-depth: 0
 
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
@@ -22,7 +23,8 @@ jobs:
       run: hugo --minify --config config.yml
 
     - name: Deploy
-      uses: peaceiris/actions-gh-pages@v2
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/main'
       env:
         ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         EXTERNAL_REPOSITORY: postliminal/ece202-fall21-project
