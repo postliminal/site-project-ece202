@@ -12,9 +12,3 @@ weight: 2
 
     indents = 4;
     return null;
-
-### insert images
-
-![test img](assets/images/x.jpg)
-
-{{< figure align=center src="/assets/images/x.jpg" >}}
