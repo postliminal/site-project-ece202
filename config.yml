@@ -1,4 +1,46 @@
 baseURL: //postliminal.github.io/ece202-fall21-project/
 languageCode: en-us
-title: My New Hugo Site
+title: "LOCALIZZACIONE"
 theme: "PaperMod"
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: ExampleSite
+  description: "ExampleSite description"
+  keywords: [Blog, Portfolio, PaperMod]
+  author: ["Edwin", "Roy"]
+
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowCodeCopyButtons: false
+  disableSpecial1stPost: false
+  disableScrollToTop: true
+  comments: false
+
+  # home-info mode
+  homeInfoParams:
+    Title: "Hi there \U0001F44B"
+    Content: Welcome to Edwin and Roy's ECE-202 Fall'21 Project Site!
+
+menu:
+  main:
+    - identifier: project
+      name: project
+      url: /
+      weight: 10
+    - identifier: contact
+      name: "contact us"
+      url: /contact/
+      weight: 20
