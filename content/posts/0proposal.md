@@ -115,7 +115,6 @@ SurroundSense: mobile phone localization via ambience fingerprinting - Martin Az
 <br/>Python nRF sniffer (802.15.4/BLE): https://github.com/NordicSemiconductor/nRF-Sniffer-for-802.15.4
 <br/>Openthread: https://openthread.io
 <br/>Mbed OS: https://os.mbed.com/mbed-os/
-
 <br/>Zephyr OS:https://www.zephyrproject.org
 <br/>OpenBeacon : https://www.openbeacon.org/about.html 
 
