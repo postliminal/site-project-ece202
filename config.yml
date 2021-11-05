@@ -32,7 +32,7 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "ECE-202 Fall'21 Project Site"
-    Content: Team Members: Roy Jara and Edwin Calderon
+    Content: "Team Members: Roy Jara and Edwin Calderon"
 
 menu:
   main:
