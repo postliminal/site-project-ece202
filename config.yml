@@ -31,8 +31,8 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
-    Content: Welcome to Edwin and Roy's ECE-202 Fall'21 Project Site!
+    Title: "ECE-202 Fall'21 Project Site"
+    Content: Team Members: Roy Jara and Edwin Calderon
 
 menu:
   main:
