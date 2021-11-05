@@ -74,7 +74,7 @@ Evaluation of results and presentation (what worked and what didnt)
 
 below).
 - Good overview on the indoors localization field (2017) https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5580254/ 
- - Performance evaluation of ble localization work (2014) https://onlinelibrary.wiley.com/doi/10.1002/ett.2864
+- Performance evaluation of ble localization work (2014) https://onlinelibrary.wiley.com/doi/10.1002/ett.2864
 - Existing implementation of ble loc on arduino nano sense (2021) https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8347277/ 
 - Location fingerprinting with BLE beacons (2015):
 - Location Fingerprinting With Bluetooth Low Energy Beacons.pdf 
@@ -109,8 +109,8 @@ A Practice of BLE RSSI Measurement for Indoor Positioning - Ramirez, Ramiro et a
 
 SurroundSense: mobile phone localization via ambience fingerprinting - Martin Azizyan, Ionut Constandache, and Romit Roy Choudhury. 2009. SurroundSense: mobile phone localization via ambience fingerprinting. In Proceedings of the 15th annual international conference on Mobile computing and networking(MobiCom '09). Association for Computing Machinery, New York, NY, USA, 261–272. DOI:https://doi.org/10.1145/1614320.1614350
 
-<br/>Arduino/TinyML: https://www.arduino.cc 
-<br/>nRF Connect for Desktop: https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-desktop
+<br/> - Arduino/TinyML: https://www.arduino.cc 
+<br/> - nRF Connect for Desktop: https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-desktop
 <br/>Python nRF sniffer (802.15.4/BLE): https://github.com/NordicSemiconductor/nRF-Sniffer-for-802.15.4
 <br/>Openthread: https://openthread.io
 <br/>Mbed OS: https://os.mbed.com/mbed-os/
