@@ -115,6 +115,7 @@ nRF Connect for Desktop: https://www.nordicsemi.com/Products/Development-tools/n
 Python nRF sniffer (802.15.4/BLE): https://github.com/NordicSemiconductor/nRF-Sniffer-for-802.15.4
 Openthread: https://openthread.io
 Mbed OS: https://os.mbed.com/mbed-os/
-Zephyr OS:https://www.zephyrproject.org
+
+\n Zephyr OS:https://www.zephyrproject.org
 OpenBeacon : https://www.openbeacon.org/about.html 
 
