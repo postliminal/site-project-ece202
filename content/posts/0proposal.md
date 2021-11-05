@@ -79,7 +79,6 @@ below).
 - Location fingerprinting with BLE beacons (2015):
 - Location Fingerprinting With Bluetooth Low Energy Beacons.pdf 
 - SurroundSense: mobile phone localization via ambience fingerprinting - https://dl.acm.org/doi/abs/10.1145/1614320.1614350
-- AoA & AoD in Radio localization - https://www.silabs.com/whitepapers/bluetooth-angle-estimation-for-real-time-locationing 
 
 
 ### 9.b. Datasets
@@ -101,4 +100,11 @@ below).
 
 ## 10. References
 
-List references correspondign to citations in your text above. For papers please include full citation and URL. For datasets and software include name and URL.
+A Review of Pedestrian Indoor Positioning Systems for Mass Market Applications - 
+Correa, Alejandro et al. “A Review of Pedestrian Indoor Positioning Systems for Mass Market Applications.” Sensors (Basel, Switzerland) vol. 17,8 1927. 22 Aug. 2017, doi:10.3390/s17081927
+
+Performance evaluation of bluetooth low energy in indoor positioning systems- Contreras, David, Castro, Mario, and de la Torre, David Sánchez (2017), Performance evaluation of bluetooth low energy in indoor positioning systems, Trans. Emerging Tel. Tech., 28: e2864. doi: 10.1002/ett.2864
+
+A Practice of BLE RSSI Measurement for Indoor Positioning - Ramirez, Ramiro et al. “A Practice of BLE RSSI Measurement for Indoor Positioning.” Sensors (Basel, Switzerland) vol. 21,15 5181. 30 Jul. 2021, doi:10.3390/s21155181
+
+SurroundSense: mobile phone localization via ambience fingerprinting - Martin Azizyan, Ionut Constandache, and Romit Roy Choudhury. 2009. SurroundSense: mobile phone localization via ambience fingerprinting. In Proceedings of the 15th annual international conference on Mobile computing and networking(MobiCom '09). Association for Computing Machinery, New York, NY, USA, 261–272. DOI:https://doi.org/10.1145/1614320.1614350
