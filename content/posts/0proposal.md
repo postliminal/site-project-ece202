@@ -109,7 +109,7 @@ A Practice of BLE RSSI Measurement for Indoor Positioning - Ramirez, Ramiro et a
 
 SurroundSense: mobile phone localization via ambience fingerprinting - Martin Azizyan, Ionut Constandache, and Romit Roy Choudhury. 2009. SurroundSense: mobile phone localization via ambience fingerprinting. In Proceedings of the 15th annual international conference on Mobile computing and networking(MobiCom '09). Association for Computing Machinery, New York, NY, USA, 261–272. DOI:https://doi.org/10.1145/1614320.1614350
 
-Arduino/TinyML: https://www.arduino.cc
+Arduino/TinyML: https://www.arduino.cc <br>
 Nordic SDK/softdevices: https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_gsg_ses%2FUG%2Fgsg%2Fsoftdevices.html
 nRF Connect for Desktop: https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-desktop
 Python nRF sniffer (802.15.4/BLE): https://github.com/NordicSemiconductor/nRF-Sniffer-for-802.15.4
