@@ -7,3 +7,10 @@ ShowReadingTime: true
 searchHidden: true
 weight: 4
 ---
+
+<!-- TODO:
+
+- Focus on literature review of comparison of protocols
+- And also past implementations of localization using RSSI
+
+ -->

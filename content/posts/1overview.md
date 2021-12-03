@@ -10,7 +10,9 @@ weight: 2
 #   image: /ece202-fall21-project/images/Tux.png
 ---
 
-<!-- <base href="{{ .Site.BaseURL }}"> -->
+<!-- TODO:
+- Need to add details on BLE and Thread specification
+ -->
 
 ## Problem:
 
