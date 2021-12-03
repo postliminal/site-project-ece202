@@ -9,6 +9,14 @@ weight: 4
 ---
 
 <!-- TODO:
+- Need to add details on BLE and Thread specification
+ -->
+
+## BLE 5.0
+
+## Thread and OpenThread
+
+<!-- TODO:
 
 - Focus on literature review of comparison of protocols
 - And also past implementations of localization using RSSI

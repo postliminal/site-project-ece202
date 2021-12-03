@@ -10,10 +10,6 @@ weight: 2
 #   image: /ece202-fall21-project/images/Tux.png
 ---
 
-<!-- TODO:
-- Need to add details on BLE and Thread specification
- -->
-
 ## Problem:
 
 With the rise and continuous update of various IoT communication standards it is hard to keep track of what is the most suitable option. Two standards, Bluetooth (BLE 5.0 standard) and Thread (implemented using OpenThread), are either massively adopted (BLE) or rapidly gaining popularity (thread). However, there has not been a recent analysis between these two protocols.
