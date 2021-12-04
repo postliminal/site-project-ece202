@@ -1,7 +1,7 @@
 ---
 title: "Design"
 date: 2021-11-01T01:26:43-07:00
-draft: true
+draft: false
 comments: false
 ShowReadingTime: true
 searchHidden: true
