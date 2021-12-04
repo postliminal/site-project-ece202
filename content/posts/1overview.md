@@ -62,4 +62,4 @@ Fall Quarter 2021:
 
 ### images:
 
-![img1](/ece202-fall21-project/images/Tux.png#center) -->
+![img1](/ecem202a_project/images/Tux.png#center) -->

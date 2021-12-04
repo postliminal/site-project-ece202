@@ -77,7 +77,7 @@ The RSSI is represented using a byte inside of the manufacturer specific data.
 
 ### Thread Primer
 
-![img1](/ece202-fall21-project/images/thread_stack.png#center)
+![img1](/ecem202a_project/images/thread_stack.png#center)
 
 [Cite the openthread website, 2 other papers, and nordic site]
 
