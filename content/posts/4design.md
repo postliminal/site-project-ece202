@@ -50,6 +50,8 @@ weight: 5
 
 # BLE Application
 
+### BLE Primer
+
 [Cite the 5.0 specification, 2 other papers, and nordic site]
 
 The Bluetooth specification provides a full stack solution for communication. Therefore, we don't need anything else to create the solution.
@@ -73,23 +75,57 @@ The RSSI is represented using a byte inside of the manufacturer specific data.
 
 # Thread Application
 
+### Thread Primer
+
+![img1](/ece202-fall21-project/images/thread_stack.png#center)
+
 [Cite the openthread website, 2 other papers, and nordic site]
 
-The 802.15.4 provides the lower layers of communication. Thread stands on top of those physical layers and implements UDP, IP Routing and 6LoWPAN. 
+- Operates on top of 802.15.4 (which handles PHY and MAC). 
+- Intended for IoT and home automation situations
+- Thread at its core: ipv6 based peer-to-peer mesh network
+- ipv6 means good performance and reliability
+- Thread implements UDP, IP Routing and 6LoWPAN. 
 
-Attempt 1: communicate RSSI based on hardware layer functions.
+- Self healing and self maintaining network
+  - Readjust if you add devices or move them around
 
-Attempt 2: UDP packets
+Ref: [electroniclinic](https://www.electroniclinic.com/thread-protocol-architecture-and-topology-fully-explained/)
 
-Attempt 3: use mqtt-sn 
+## Network Design
 
-### RSSI
+All will be full thread devices - to avoid sleep.
 
-### MQTT and MQTT-SN
+[info on node types](https://openthread.io/guides/thread-primer/node-roles-and-types)
 
-In orderz
-MQTT-SN is a variation of the MQTT protocol for Sensor Networks. 
+- Border Router: raspberry pi + ncp dongle
+  - connects thread network to PC
+- End devices - Beacons (2 dongles+1 arduino) - are children
+- Lead device - arduino
+  - uses coAP
+  - controls requests for REEDs to become routers
 
+### Attempt 1: communicate RSSI based on hardware layer functions.
+
+### Attempt 2: UDP packets
+
+### Attempt 3: use mqtt-sn 
+- Lightweight version of MQTT, using UDP
+- Friendly for sensor networks (sleep mode, low energy, limited bandwidths)
+- Requires a connection to a broker before being able to send/receive msgs
+- Uses subscription based communication
+- Publishes to a topic, other nodes can subscribe to the topic and receive the messages
+
+references:
+- [ublox mqtt-sn beginner guide](https://www.u-blox.com/en/blogs/insights/mqtt-beginners-guide)
+- [steve's internet guide mqttsn](http://www.steves-internet-guide.com/mqtt-sn/)
+
+### RSSI in Thread/802.15.4
+
+Few functions/data structures to keep in mind:
+- [otNeighborInfo Struct Reference](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fsdk_tz_v4.0.0%2Fstructot_neighbor_info.html&resultof=%22%72%73%73%69%22%20)
+- [otChildInfo Struct Reference](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fsdk_tz_v4.0.0%2Fstructot_child_info.html&resultof=%22%72%73%73%69%22%20)
+- [otThreadParentResponseInfo Struct Reference](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fsdk_tz_v4.0.0%2Fstructot_thread_parent_response_info.html&resultof=%22%72%73%73%69%22%20)
 
 # Location from RSSI
 ## Initial Model: Geomtrical Solution
