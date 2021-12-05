@@ -50,47 +50,31 @@ weight: 5
 
 # BLE Application
 
-### BLE Primer
+Main idea:
+Beacons will use advertising channels.
+Central device will filter out the advertisements via mac address periodically. Will fit them in circular buffers (window sizes).
 
-[Cite the 5.0 specification, 2 other papers, and nordic site]
 
-The Bluetooth specification provides a full stack solution for communication. Therefore, we don't need anything else to create the solution.
-
-[Figure of 37+3 adv channels and next to it overlay with wifi channels to show less interference in adv channels]
-
-### Advertising
-
-By default occurs over channels 37, 38 and 39, which are spread out over the 2.4MHz band, and are precisely located at the edges of the wifi band to help reduce wifi interference. 
-
-With the nordic SDK, advertisements can be precisely configured with various settings. We'll explore the use of the following:
-- Window size
-- RSSI dB filtering
-- Advertising interval
-
-### RSSI
-
-Received Signal Strength Indicator. This value measures the received signal strength in dB and can be used to esitmate the distance of the receiver from the transmitter device. 
-
-The RSSI is represented using a byte inside of the manufacturer specific data. 
 
 # Thread Application
 
-### Thread Primer
 
-![img1](/ecem202a_project/images/thread_stack.png#center)
 
-[Cite the openthread website, 2 other papers, and nordic site]
+Options:
+- central device has to be parent
+- beacons have to be child
+- Still need to know where devices are...
+- poll by asking child info and parsing
+connected to children. 
 
-- Operates on top of 802.15.4 (which handles PHY and MAC). 
-- Intended for IoT and home automation situations
-- Thread at its core: ipv6 based peer-to-peer mesh network
-- ipv6 means good performance and reliability
-- Thread implements UDP, IP Routing and 6LoWPAN. 
+Now... how do we ensure automatic connection?
+Todo: 
+- [mqtt sn example](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fsdk_tz_v3.1.0%2Fthread_mqttsn_example.html)
+- [border router example](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fcom.nordic.infocenter.thread_zigbee.v3.0.0%2Fthread_border_router.html)
+- [802 sniffer](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_sniffer_802154%2FUG%2Fsniffer_802154%2Fintro_802154.html)
 
-- Self healing and self maintaining network
-  - Readjust if you add devices or move them around
+If all else fails, use border router to define macro variables as a arguments in a function call.
 
-Ref: [electroniclinic](https://www.electroniclinic.com/thread-protocol-architecture-and-topology-fully-explained/)
 
 ## Network Design
 
@@ -98,12 +82,26 @@ All will be full thread devices - to avoid sleep.
 
 [info on node types](https://openthread.io/guides/thread-primer/node-roles-and-types)
 
+Leader is chosen automatically.
+Can only choose if device is:
+- Full thread device
+  - Router
+  - Router eligible device (REED) - can become a router
+  - Full end device
+- Minimal thread device
+
+Our proposed network:
 - Border Router: raspberry pi + ncp dongle
-  - connects thread network to PC
-- End devices - Beacons (2 dongles+1 arduino) - are children
-- Lead device - arduino
-  - uses coAP
-  - controls requests for REEDs to become routers
+- End devices - Beacons (2 dongles+1 arduino) - children
+- Router(?) - arduino
+  - to request infor from children
+
+
+
+
+Request info using: Mesh-Local EID
+
+
 
 ### Attempt 1: communicate RSSI based on hardware layer functions.
 
