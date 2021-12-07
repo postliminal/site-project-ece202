@@ -137,7 +137,9 @@ R. Faragher and R. Harle, "Location Fingerprinting With Bluetooth Low Energy Bea
 
 ## Model Improvements: 
 
-There are disadvantages of trilateration, however. Namely in the number of beacons required for precise accuracey, positioning with respect to the target, and susceptibility to noise. To address these concerns, inference methods were explored to leverage the advantafes of these methods - which can be calibrated to be more robust in real applications.
+There are disadvantages of trilateration, however. Namely in the number of beacons required for precise accuracy, positioning with respect to the target, and susceptibility to noise. To address these concerns, inference methods were explored to leverage the advantafes of these methods - which can be calibrated to be more robust in real applications.Bayes theorem allows us to compute the most likely class for some measures RSSI.
+
+
 
 ### Deploying the updated model: CMSIS Libraries
 [How to implement Bayesian with CMSIS-DSP]
