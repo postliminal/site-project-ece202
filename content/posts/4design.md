@@ -128,7 +128,7 @@ Few functions/data structures to keep in mind:
 # Location from RSSI
 ## Initial Model: Geomtrical Solution
 
-- Trilateration
+- Trilateration test
 
 ## Improving the Model: SVM
 
