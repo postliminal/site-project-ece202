@@ -146,6 +146,21 @@ CLI commands:
         1000 (if router)
         1001 (if child)
 
+MQTT-SN Example:
+
+in raspberry pi: 
+
+        $ sudo /usr/local/sbin/wpantund -o NCPSocketNme /dev/ttyACM0 -o WPANInterfaceName wpan0
+        $ sudo wpanctl <command>
+        $ sudo wpanctl status
+        > if joined, leave
+        $ sudo wpanctl leave
+        $ sudo wpanctl join -n OpenThread-1262
+        $ 
+
+to connect ncp try: https://groups.google.com/g/openthread-users/c/GIg2i5WYF9A 
+
+
   From github [ot-thread](https://github.com/openthread/openthread/issues/4918):
   "Discovering the location of services is a common problem in an IP-based network"  
 
