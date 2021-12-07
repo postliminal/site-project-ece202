@@ -137,6 +137,8 @@ R. Faragher and R. Harle, "Location Fingerprinting With Bluetooth Low Energy Bea
 
 ## Improving the Model: SVM
 
+There are disadvantages of trilateration, however. Namely in the number of beacons required for precise accuracey, positioning with respect to the target, and susceptibility to noise. To address these concerns, inference methods were explored to leverage the advantafes of these methods - which can be calibrated to be more robust in real applications.
+
 ### Deploying the updated model: CMSIS Libraries
 [How to implement SVM with CMSIS-DSP](https://developer.arm.com/documentation/102052/0000)
 
