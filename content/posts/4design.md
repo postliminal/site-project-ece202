@@ -126,11 +126,18 @@ Few functions/data structures to keep in mind:
 - [otThreadParentResponseInfo Struct Reference](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fsdk_tz_v4.0.0%2Fstructot_thread_parent_response_info.html&resultof=%22%72%73%73%69%22%20)
 
 # Location from RSSI
-## Initial Model: Geomtrical Solution
+## Initial Model: Geometrical Application
 
-- Trilateration
+Trilateration is a navigation position methodology based on simultaneous ranging from, traditionally, three trackers.Through the use of three beacons and their associated Received Signal Strength Indicator, RSSI. Trilateration can be used to estimate the location of an unknown point in space. Distances (d_one, d_two, d_three) are measured by an RSSI signal. The location of an unknown point of interest can be found by solving a system of quadratic equations. A baseline approach for Trilateration in python was used to build the intuiton and direction of this localization project. The motivating paper for this exploration is listed below and highly recommended for anyone interested in learning about this technique and overall discipline.
+
+
+R. Faragher and R. Harle, "Location Fingerprinting With Bluetooth Low Energy Beacons," in IEEE Journal on Selected Areas in Communications, vol. 33, no. 11, pp. 2418-2428, Nov. 2015, doi: 10.1109/JSAC.2015.2430281.
+
+
 
 ## Improving the Model: SVM
+
+There are disadvantages of trilateration, however. Namely in the number of beacons required for precise accuracey, positioning with respect to the target, and susceptibility to noise. To address these concerns, inference methods were explored to leverage the advantafes of these methods - which can be calibrated to be more robust in real applications.
 
 ### Deploying the updated model: CMSIS Libraries
 [How to implement SVM with CMSIS-DSP](https://developer.arm.com/documentation/102052/0000)
