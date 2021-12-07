@@ -145,5 +145,7 @@ There are disadvantages of trilateration, however. Namely in the number of beaco
 [How to implement Bayesian with CMSIS-DSP]
 https://developer.arm.com/documentation/102052/0000/Train-your-Bayesian-estimator-with-scikit-learn
 
+Cons:
+  The limitations of CMSIS ML aglorithms are plentiful. Currently, there are only a few supported wrappers for the expansive set within SK-learn, and compromises had to be done with respect to accuracy and model size. 
 
 # Experiments
