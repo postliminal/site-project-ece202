@@ -126,13 +126,13 @@ Few functions/data structures to keep in mind:
 - [otThreadParentResponseInfo Struct Reference](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fsdk_tz_v4.0.0%2Fstructot_thread_parent_response_info.html&resultof=%22%72%73%73%69%22%20)
 
 # Location from RSSI
-## Initial Model: Geomtrical Solution
+## Initial Model: Geometrical Application
 
-Trilateration is a navigation position methodology based on simultaneous ranging from three trackers.Through the use of three beacons and their associated RSSI, Trilateration is used to estimate the location of an unknown point ("star" in the image below). Distances (d_one, d_two, d_three) are measured by an RSSI signal. The location of the unknown point of interest can be found by solving a system of quadratic equations. The script in this directory explores a baseline approach for Trilateration in python that was used to build the intuiton and direction of the project. The motivating paper for this exploration is listed below and highly recommended for anyone interested in learning about this technique and overall discipline.
+Trilateration is a navigation position methodology based on simultaneous ranging from, traditionally, three trackers.Through the use of three beacons and their associated Received Signal Strength Indicator, RSSI, Trilateration can be used to estimate the location of an unknown point in space. Distances (d_one, d_two, d_three) are measured by an RSSI signal. The location of an unknown point of interest can be found by solving a system of quadratic equations. A baseline approach for Trilateration in python was used to build the intuiton and direction of this localization project. The motivating paper for this exploration is listed below and highly recommended for anyone interested in learning about this technique and overall discipline.
 
 
 R. Faragher and R. Harle, "Location Fingerprinting With Bluetooth Low Energy Beacons," in IEEE Journal on Selected Areas in Communications, vol. 33, no. 11, pp. 2418-2428, Nov. 2015, doi: 10.1109/JSAC.2015.2430281.
-<img width="551" alt="Screen Shot 2021-12-05 at 11 54 49 AM" src="https://user-images.githubusercontent.com/88572004/144761593-f493f3af-e4d2-405f-89e6-de25e21859d5.png">
+
 
 
 ## Improving the Model: SVM
