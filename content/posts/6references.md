@@ -8,4 +8,6 @@ searchHidden: true
 weight: 7
 ---
 
- # NICELY FORMATTED, WITH NUMBERS, MLA or just copy the "how to cite" button
+Polak, Ladislav et al. “Received Signal Strength Fingerprinting-Based Indoor Location Estimation Employing Machine Learning.” Sensors (Basel, Switzerland) vol. 21,13 4605. 5 Jul. 2021, doi:10.3390/s21134605
+
+https://developer.arm.com/documentation/102052/0000/Implement-your-SVM-with-CMSIS-DSP
