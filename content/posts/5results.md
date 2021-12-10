@@ -8,7 +8,9 @@ searchHidden: true
 weight: 6
 ---
 
-_we only need to do a few sweeps and we get something worth _
+_we only need to do a few sweeps and we get something solid_
+
+**take photos!!!**
 
 # 1. Noisy measurements of RSSI in BLE and 802.15.4
 
