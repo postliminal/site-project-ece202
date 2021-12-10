@@ -1,6 +1,6 @@
 ---
 title: "Prior Work"
-date: 2021-11-01T01:26:43-07:00
+date: 2021-12-01T01:26:43-07:00
 draft: false
 comments: false
 ShowReadingTime: true
@@ -8,15 +8,18 @@ searchHidden: true
 weight: 4
 ---
 
-<!-- TODO:
-- Need to add details on BLE and Thread specification
- -->
+# Bluetooth - BLE 5.0
 
-# BLE 5.0
+A wireless communication protocol that is (almost if not already) ubiquitous. Released in 2016, BLE 5.0 introduced a few changes that make bluetooth technology suitable for more applications. New features allow:
+- larger bandwidth transmissions (higher throughput = higher data speeds)
+- multi device connection (e.g. now you can send music to two pairs of headphones from one device)
+- larger advertising packets allow better pairing + other applications (**beacons**!). 
+
+We will take advantage of larger advertising packets for the localization application. 
 
 ### BLE Primer
 
-[Cite the 5.0 specification, 2 other papers, and nordic site]
+[Cite the 5.0 specification]
 
 The Bluetooth specification provides a full stack solution for communication. Therefore, we don't need anything else to create the solution.
 
@@ -40,26 +43,26 @@ The RSSI is represented using a byte inside of the manufacturer specific data.
 # Thread and OpenThread
 
 ### Summary
-- Operates on top of 802.15.4 (which handles PHY and MAC). 
+- Operates on top of 802.15.4 - 2.4 GHz radio band (which handles PHY and MAC). 
 - Intended for IoT and home automation situations
 - Thread at its core: ipv6 based peer-to-peer mesh network
-- ipv6 means good performance and reliability
+  - ipv6 means good performance and reliability
 - Thread implements UDP, IP Routing and 6LoWPAN. 
-
 - Self healing and self maintaining network
   - Readjust if you add devices or move them around
 
-Ref: [electroniclinic](https://www.electroniclinic.com/thread-protocol-architecture-and-topology-fully-explained/)
+![Thread stack](/ecem202a_project/images/thread_stack.png)
 
-## Thread Primer
 
-![img1](/ecem202a_project/images/thread_stack.png#center)
 
-[Cite the openthread website, 2 other papers, and nordic site]
+### References: 
+
+- [openthread site](https://openthread.io/)
+- [nordic thread sdk](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fstruct_sdk%2Fstruct%2Fsdk_thread_zigbee_latest.html)
+- [electroniclinic](https://www.electroniclinic.com/thread-protocol-architecture-and-topology-fully-explained/)
 
 ### Exploration: 
 - [nordic cli example](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fsdk_tz_v4.1.0%2Fthread_cli_example.html)
-- [github issue](https://github.com/openthread/openthread/issues/4036)
 
 Leader (FTD):
 
@@ -94,9 +97,10 @@ Leader (FTD):
         > state
         leader
         Done
+        > neighbor table
 
 
-Slave (MTD):
+Child (MTD):
 
         > reset
         > 
@@ -128,6 +132,7 @@ Slave (MTD):
         > state
         child
         Done
+        
 
 CLI commands:
 
@@ -146,23 +151,38 @@ CLI commands:
         1000 (if router)
         1001 (if child)
 
-MQTT-SN Example:
-
 in raspberry pi: 
 
-        $ sudo /usr/local/sbin/wpantund -o NCPSocketNme /dev/ttyACM0 -o WPANInterfaceName wpan0
-        $ sudo wpanctl <command>
         $ sudo wpanctl status
-        > if joined, leave
-        $ sudo wpanctl leave
-        $ sudo wpanctl join -n OpenThread-1262
-        $ 
+        > get status
+        >> ** navigate to your raspberry pi IP address **
+        >> ** Join > Select your network > use masterkey to join network **
 
-to connect ncp try: https://groups.google.com/g/openthread-users/c/GIg2i5WYF9A 
+Now we have a working network with 1 leader, one border router (gateway to the internet), and one child
 
 
-  From github [ot-thread](https://github.com/openthread/openthread/issues/4918):
-  "Discovering the location of services is a common problem in an IP-based network"  
+# Setting up the development environment
+
+## Segger Embedded Studio
+
+Huge thanks to: [this element14 tutorial](https://community.element14.com/products/roadtest/b/blog/posts/tutorial-02-part-1-developing-nrf52840-application-arduino-nano-33-ble-sense-roadtest)
+
+- Find example in SDK as a template
+- Copy (into an empty dir for your new project) the following:
+  - `main.c`
+  - `pca10056/blank/ses/flash_placement.xml`
+  - `pca10056/blank/ses/<projectname>.emProject`
+  - `pca10056/blank/config/sdk_config.h`
+- Open the .emproject file and make the following edits:
+  - Replace `../../../../../..` with your `/<path_to_sdk_root_dir>`
+  - Remove `../../../config;` from `c_user_include_directories`
+  -  Remove `../../..;` from `c_user_include_directories` value
+  -  Replace `../config;` to `.;`
+  -  Replace `../../../main.c` to `main.c`
+  -  Replace `../config/sdk_config.h` to `sdk_config.h`
+
+
+
 
 <!-- TODO:
 

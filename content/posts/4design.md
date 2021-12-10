@@ -30,7 +30,11 @@ weight: 5
 [images of boards?]
 
 - (2x) Arduino Nano Sense 33 BLE
+  - Beacon 1 MAC: 
+  - Central MAC: D4:6B:03:E9:AD:E7
 - (2x) nRF52840 Dongle
+  - Beacon 2 MAC: 
+  - Beacon 3 MAC: 
 - (1x) nRF52840 Development Kit
 
 # The Software Stack
@@ -54,10 +58,12 @@ Main idea:
 Beacons will use advertising channels.
 Central device will filter out the advertisements via mac address periodically. Will fit them in circular buffers (window sizes).
 
+### multifilter setup nrf:
+https://infocenter.nordicsemi.com/topic/sdk_nrf5_v17.1.0/lib_ble_scan.html?cp=8_1_3_2_12
+
 
 
 # Thread Application
-
 
 
 Options:
