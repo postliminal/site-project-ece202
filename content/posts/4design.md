@@ -31,11 +31,12 @@ weight: 5
 
 - (2x) Arduino Nano Sense 33 BLE
   - Beacon 1 MAC: 
-  - Central MAC: D4:6B:03:E9:AD:E7
+  <!-- - Central MAC: D4:6B:03:E9:AD:E7 -->
 - (2x) nRF52840 Dongle
   - Beacon 2 MAC: 
   - Beacon 3 MAC: 
 - (1x) nRF52840 Development Kit
+  - Central device (polls beacons)
 
 # The Software Stack
 
@@ -56,69 +57,58 @@ weight: 5
 
 Main idea:
 Beacons will use advertising channels.
-Central device will filter out the advertisements via mac address periodically. Will fit them in circular buffers (window sizes).
+Central device will filter out the advertisements via mac address periodically. Will fit them into buffers, and perform trilateration to get location information.
 
-### multifilter setup nrf:
-https://infocenter.nordicsemi.com/topic/sdk_nrf5_v17.1.0/lib_ble_scan.html?cp=8_1_3_2_12
+### TODO: fix filenames of projects/hex files
 
+Projects:
+- `software/ble_app/ble_app_beacon_arduino`
+- `software/ble_app/ble_app_beacon_dongle`
+- `software/ble_app/ble_app_beacon_dk`
+- `software/ble_app/ble_app_central_dk`
+
+_Note: hex files ready to flash can be found in Output/Release/Exe/<project_name>.hex for each project_
+
+
+## *************** TODO: explain code ^^ !
 
 
 # Thread Application
+### Proposed network:
+- 2 MTD (minimal thread devices) 
+  - CLI USB example for dongle
+  - CLI USB example for arduino
+  - _children/end devices_
+- 1 NCP (network co-processor) + Raspberry pi
+  - NCP example for dongle
+  - _router+gateway_
+- 1 FTD (full thread device)
+  - thread_cli_uart example for development kit
+  - _leader_
 
+With this network we can make the FTD the leader (capable of easily polling children devices and neighboring routers).
 
-Options:
-- central device has to be parent
-- beacons have to be child
-- Still need to know where devices are...
-- poll by asking child info and parsing
-connected to children. 
+_Note: automatic network creation, commissioning and joining are beyond the scope of this project, which is why the CLI's / web GUI will be used._
 
-Now... how do we ensure automatic connection?
-Todo: 
-- [mqtt sn example](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fsdk_tz_v3.1.0%2Fthread_mqttsn_example.html)
 - [border router example](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fcom.nordic.infocenter.thread_zigbee.v3.0.0%2Fthread_border_router.html)
-- [802 sniffer](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_sniffer_802154%2FUG%2Fsniffer_802154%2Fintro_802154.html)
 
-If all else fails, use border router to define macro variables as a arguments in a function call.
+Possibility to ping all (multicast) via:
 
+      > ping ff02::1
 
-## Network Design
+Projects:
+- `software/openthread_app/openthread_cli_arduino`
+  - based on cli/mtd/usb/ example
+- **MISSING** `software/openthread_app/openthread_cli_dongle`
+  - based on cli/mtd/usb/ example
+- `software/openthread_app/openthread_cli_dk`
+  - based on cli/ftd/uart example
+- `software/openthread_app/openthread_ncp_dongle`
+  - based on ncp example
 
-All will be full thread devices - to avoid sleep.
+_Note: hex files ready to flash can be found in Output/Release/Exe/<project_name>.hex for each project_
 
-[info on node types](https://openthread.io/guides/thread-primer/node-roles-and-types)
-
-Leader is chosen automatically.
-Can only choose if device is:
-- Full thread device
-  - Router
-  - Router eligible device (REED) - can become a router
-  - Full end device
-- Minimal thread device
-
-Our proposed network:
-- Border Router: raspberry pi + ncp dongle
-- End devices - Beacons (2 dongles+1 arduino) - children
-- Router(?) - arduino
-  - to request infor from children
-
-
-
-
-Request info using: Mesh-Local EID
-
-
-
-### Attempt 1: communicate RSSI based on hardware layer functions.
-
-### Attempt 2: UDP packets
-
-### Attempt 3: use mqtt-sn 
-- Lightweight version of MQTT, using UDP
-- Friendly for sensor networks (sleep mode, low energy, limited bandwidths)
-- Requires a connection to a broker before being able to send/receive msgs
-- Uses subscription based communication
-- Publishes to a topic, other nodes can subscribe to the topic and receive the messages
+## *************** TODO: explain code ^^ !
 
 references:
 - [ublox mqtt-sn beginner guide](https://www.u-blox.com/en/blogs/insights/mqtt-beginners-guide)
@@ -128,8 +118,7 @@ references:
 
 Few functions/data structures to keep in mind:
 - [otNeighborInfo Struct Reference](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fsdk_tz_v4.0.0%2Fstructot_neighbor_info.html&resultof=%22%72%73%73%69%22%20)
-- [otChildInfo Struct Reference](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fsdk_tz_v4.0.0%2Fstructot_child_info.html&resultof=%22%72%73%73%69%22%20)
-- [otThreadParentResponseInfo Struct Reference](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fsdk_tz_v4.0.0%2Fstructot_thread_parent_response_info.html&resultof=%22%72%73%73%69%22%20)
+
 
 # Location from RSSI
 ## Initial Model: Geometrical Application
@@ -148,8 +137,8 @@ There are disadvantages of trilateration, however. Namely in the number of beaco
 
 
 ### Deploying the updated model: CMSIS Libraries
-[How to implement Bayesian with CMSIS-DSP]
-https://developer.arm.com/documentation/102052/0000/Train-your-Bayesian-estimator-with-scikit-learn
+[How to implement Bayesian with CMSIS-DSP](
+https://developer.arm.com/documentation/102052/0000/Train-your-Bayesian-estimator-with-scikit-learn)
 
 Cons:
   The limitations of CMSIS ML aglorithms are plentiful. Currently, there are only a few supported wrappers for the expansive set within SK-learn, and compromises had to be done with respect to accuracy and model size. 

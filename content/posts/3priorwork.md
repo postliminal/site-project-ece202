@@ -182,6 +182,20 @@ Huge thanks to: [this element14 tutorial](https://community.element14.com/produc
   -  Replace `../config/sdk_config.h` to `sdk_config.h`
 
 
+# Quick addition to SDK to use NRF with arduino
+
+Big thanks to: [this repo](https://github.com/drewvigne/arduino_nano_33_ant)
+
+In order to use NRF high level API functions, we need to map peripherals, pins, ports on the arduino board to the NRF functions/macros/etc.
+The SDK uses `<sdk_path>/components/boards/boards.h` to conditionally include the corresponding header file for the hardware of our choice (selection done in project settings via preprocessor flag).
+
+Steps:
+ - edit `boards.h` by adding the following line (right before `#elif defined(CUSTOM_BOARD_INC)`)
+      
+        #elif defined(ARDUINO_BLE_33)
+          #include "arduino_ble_33.h"
+- Copy the file in `components/boards/arduino_ble_33.h` to `<sdk_path>/components/boards/boards.h`
+- Modify project file's preprocessor flag to `ARDUINO_BLE_33`
 
 
 <!-- TODO:
