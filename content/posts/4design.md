@@ -15,7 +15,7 @@ weight: 5
 - Software Stack
 - BLE Application
 - OpenThread Application
-- Localization Methods using RSSI
+- Localization Methods using RSS
 - Experiments
 
 
