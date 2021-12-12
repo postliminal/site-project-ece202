@@ -22,6 +22,16 @@ _we only need to do a few sweeps and we get something solid_
 
 # 2. Localization results (BLE vs. Thread)
 
+It should be noted that OpenThread is a self-healing network, and since "Self-healing allows a routing-based network to operate when a node breaks down or when a connection becomes unreliable. [1]" The synchonicity of this network differs significantly from BLE. The BLE implemented does not have this feature, and this is highly visible in the data collected when comparing results. BLE is a continous spectrum of data, whilst OpenThread is not. The topology of OpenThread changes as a function of time. This is an advantage from a reliability perspective, but ultimately created an inequivalent comparison. The metric for comparison therefore BLE and OpenThread ultimately became founded on raw RSSI values.
+
+
+
+
+
+Throughout the data collection of the RSSI using OpenThread and BLE,  
+
+
+
 Current narrative:
 - thread is not meant for this application
   - self healing/automated network changes structure
@@ -36,3 +46,6 @@ Current narrative:
 - easiest could be window changes 
   - median x choice of N
   - mean + choice of N
+
+
+[1] - Wikipedia contributors. "Mesh networking." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 9 Dec. 2021. Web. 12 Dec. 2021.
