@@ -9,10 +9,17 @@ weight: 6
 ---
 # 1. Noisy measurements of RSSI in BLE and 802.15.4
 
-![rssi](/ecem202a_project/images/1m_rssi_data_ch3X_1.png)
+![im1](/ecem202a_project/images/1m_rssi_data_ch3X_1.png)
 
 
-![rssi](/ecem202a_project/images/2m_rssi_data_ch3X_1.png)
+![im2](/ecem202a_project/images/2m_rssi_data_ch3X_1.png)
+
+The above two images show the RSSI collected. As expected the RSSI degrades as the distance between the beacons and the receiver increases.
+
+The below image shows a snapshot of the ML model's ability to predict the distance from a RSS-fingerprint map to estimate the location of an object. 
+
+![im3](/ecem202a_project/images/ML_plotpdf.png)
+
 
 
 
