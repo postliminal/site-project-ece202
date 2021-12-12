@@ -7,11 +7,6 @@ ShowReadingTime: true
 searchHidden: true
 weight: 6
 ---
-
-_we only need to do a few sweeps and we get something solid_
-
-**take photos!!!**
-
 # 1. Noisy measurements of RSSI in BLE and 802.15.4
 
 - python plots
@@ -24,28 +19,14 @@ _we only need to do a few sweeps and we get something solid_
 
 It should be noted that OpenThread is a self-healing network, and since "Self-healing allows a routing-based network to operate when a node breaks down or when a connection becomes unreliable. [1]" The synchonicity of this network differs significantly from BLE. The BLE implemented does not have this feature for all nodes, and this is highly visible in the data collected when comparing results. BLE is a continous spectrum of data, whilst OpenThread is not. The topology of OpenThread changes as a function of time. This is an advantage from a reliability perspective, but ultimately created an inequivalent comparison. The metric for comparison therefore BLE and OpenThread ultimately became founded on raw RSSI values. The RSSI values for BLE and OpenThread offered no significant performance in the environment tested. BLE does have greater performance in terms of latency, but this is once again due to OpenThread's self-healing feature.
 
+With regards to the RSSI values obtained using both BLE and OpenThread. OpenThread was much more consistent in the values reported. The RRSI values reported in the data are pretty consistent and do decreases as the distance increases from the receiver. An interesting observation is that the RSSI values are clustered to a smaller range of values, such that there is not much variance in the RSSI values. This is somewhat expected since, as noted, the topology is "self-healing".
+
+There is a larger continous spectrum in the BLE values obtained in the experiments which speaks to the high variance and faultiness of a BLE network.
+
+These phenomenon is noted in the "RSSI Inspection" notebook in the github for this project.
 
 
-
-
-Throughout the data collection of the RSSI using OpenThread and BLE,  
-
-
-
-Current narrative:
-- thread is not meant for this application
-  - self healing/automated network changes structure
-  - give example of applications meant for thread
-
-- unable to disable exponential backoff when using `otGetNeighborinfo` without having to recompile the libraries manually
-  - potentially removing that thread certification?? idk - should cite a source if we wish to say this
-
-- 
-
-# 3. A sweep of bluetooth configs
-- easiest could be window changes 
-  - median x choice of N
-  - mean + choice of N
+- Whilst the group was able to implement a machine learning model developed in Segger with CMSIS' DSP toolbox, further work would be needed to validate the results more accurately. As of now, the values for the BLE configuration fit the distance measurements magnitude expected. Please see the "Future Work" section for elaboration.
 
 
 [1] - Wikipedia contributors. "Mesh networking." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 9 Dec. 2021. Web. 12 Dec. 2021.
