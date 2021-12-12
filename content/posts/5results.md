@@ -9,6 +9,14 @@ weight: 6
 ---
 # 1. Noisy measurements of RSSI in BLE and 802.15.4
 
+![rssi](/ecem202a_project/images/1m_rssi_data_ch3X_1.png)
+
+
+![rssi](/ecem202a_project/images/2m_rssi_data_ch3X_1.png)
+
+
+
+
 - python plots
   - if possible have multiple adv channels
   - and compare aggregate/default/average
