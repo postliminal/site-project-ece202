@@ -18,7 +18,7 @@ The above two images show the RSSI collected. As expected the RSSI degrades as t
 
 The below image shows a snapshot of the ML model's ability to predict the distance from a RSS-fingerprint map to estimate the location of an object. 
 
-![im3](/ecem202a_project/images/ML_plotpdf.png)
+![im3](/ecem202a_project/images/ML_plotpdf.pdf)
 
 
 
@@ -41,7 +41,7 @@ There is a larger continous spectrum in the BLE values obtained in the experimen
 These phenomenon is noted in the "RSSI Inspection" notebook in the github for this project.
 
 
-- Whilst the group was able to implement a machine learning model developed in Segger with CMSIS' DSP toolbox, further work would be needed to validate the results more accurately. As of now, the values for the BLE configuration fit the distance measurements magnitude expected. Please see the "Future Work" section for elaboration.
+Whilst the group was able to implement a machine learning model developed in Segger with CMSIS' DSP toolbox, further work would be needed to validate the results more accurately. As of now, the values for the BLE configuration fit the distance measurements magnitude expected. Please see the "Future Work" section for elaboration.
 
 
 [1] - Wikipedia contributors. "Mesh networking." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 9 Dec. 2021. Web. 12 Dec. 2021.
