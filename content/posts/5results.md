@@ -43,5 +43,6 @@ These phenomenon is noted in the "RSSI Inspection" notebook in the github for th
 
 Whilst the group was able to implement a machine learning model developed in Segger with CMSIS' DSP toolbox, further work would be needed to validate the results more accurately. As of now, the values for the BLE configuration fit the distance measurements magnitude expected. Please see the "Future Work" section for elaboration.
 
+** All scripts used to generat the work here is in the "Data" folder of the asscociated repo
 
 [1] - Wikipedia contributors. "Mesh networking." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 9 Dec. 2021. Web. 12 Dec. 2021.
