@@ -19,11 +19,13 @@ We will take advantage of larger advertising packets for the localization applic
 
 ### BLE Primer
 
-[Cite the 5.0 specification]
+[Bluetooth 5.0 Specification](https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=457080)
 
 The Bluetooth specification provides a full stack solution for communication. Therefore, we don't need anything else to create the solution.
 
-[Figure of 37+3 adv channels and next to it overlay with wifi channels to show less interference in adv channels]
+![ble advertising](/ecem202a_project/images/ble_adv_channels.png)
+BLE advertising channels + overlay with wifi channels showing less likelihood for interference in these channels.
+Source: DOI 10.1109/JSAC.2015.2430281
 
 ### Advertising
 
