@@ -148,3 +148,5 @@ The Experimental setup:
 <img width="569" alt="Screen Shot 2021-12-11 at 3 59 19 PM" src="https://user-images.githubusercontent.com/88572004/145695374-9b11634b-fb60-4a40-9d70-91d047a3650f.png">
 
 
+Data was collected at the UCLA campus in the Kerchoff lounge. RSSI measurements were taken using BLE and OpenThread Applications at fixed distances of one meter, two meters, and three meters from the receiver. This data is is in the "Data" folder of the github.
+
