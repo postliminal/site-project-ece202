@@ -139,6 +139,7 @@ Reference: R. Faragher and R. Harle, "Location Fingerprinting With Bluetooth Low
 ### Deploying the updated model: CMSIS Libraries
 [How to implement Bayesian with CMSIS-DSP](
 https://developer.arm.com/documentation/102052/0000/Train-your-Bayesian-estimator-with-scikit-learn)
+[How to implement Bayesian with SVM-DSP] https://developer.arm.com/documentation/102052/0000/Implement-your-SVM-with-CMSIS-DSP
 
 Cons:
   The limitations of CMSIS ML aglorithms are plentiful. Currently, there are only a few supported wrappers for the expansive set within SK-learn, and compromises had to be done with respect to accuracy and model size. 
