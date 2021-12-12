@@ -27,7 +27,7 @@ weight: 5
 
 ### The SoC: Nordic nRF52840
 
-[images of boards?]
+![hw](/ecem202a_project/images/hardware.png)
 
 - (2x) Arduino Nano Sense 33 BLE
   - Beacon 1 MAC: 
