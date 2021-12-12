@@ -19,7 +19,7 @@ weight: 5
 - Software Stack
 - BLE Application
 - OpenThread Application
-- Location from RSSI
+- Localization Methods using RSSI
 - Experiments
 
 
@@ -27,7 +27,6 @@ weight: 5
 
 ### The SoC: Nordic nRF52840
 
-![hw](/ecem202a_project/images/hardware.png)
 
 - (2x) Arduino Nano Sense 33 BLE
   - Beacon 1 MAC: 
@@ -37,6 +36,8 @@ weight: 5
   - Beacon 3 MAC: 
 - (1x) nRF52840 Development Kit
   - Central device (polls beacons)
+
+![hw](/ecem202a_project/images/hardware.png)
 
 # The Software Stack
 
