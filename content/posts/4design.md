@@ -142,7 +142,9 @@ https://developer.arm.com/documentation/102052/0000/Train-your-Bayesian-estimato
 Cons:
   The limitations of CMSIS ML aglorithms are plentiful. Currently, there are only a few supported wrappers for the expansive set within SK-learn, and compromises had to be done with respect to accuracy and model size. 
 
-# Experiments
+# Experiments:
+The Experimental setup:
+
 <img width="569" alt="Screen Shot 2021-12-11 at 3 59 19 PM" src="https://user-images.githubusercontent.com/88572004/145695374-9b11634b-fb60-4a40-9d70-91d047a3650f.png">
 
-The Experimental setup:
+
