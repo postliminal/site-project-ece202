@@ -106,23 +106,18 @@ Projects:
 _Note: hex files ready to flash can be found in Output/Release/Exe/<project_name>.hex for each project_
 
 The central device solution:
-- MAC address filtering:
-  - Set BLE advertising filters with `nrf_ble_scan_filter_set`
-  - Enabled them with `nrf_ble_scan_filters_enable`
-- Handling a filter match
-  - Using switch case `NRF_BLE_SCAN_EVT_FILTER_MATCH`
-  - Advertising report variable `p_adv` now holds contents of advertising match
-    - Access MAC address via: `p_adv->peer_addr.addr`
-    - Acess RSSI via: `p_adv->rssi`
+- Timer creation using the `app_timer` module
+  - After initialization, a callback can be configured
+-  Callback: 
+   -  Use the `otThreadGetNextNeighborInfo` function to get the next neighbor
+   -  Then we can use the `my_neighbor_info` to access the neighbor info data structure
+      -  RLOC (ID): `my_neighbor_info.mRloc16`
+      -  Age (time since last update to neighbor info): `my_neighbor_info.mAge`
+      -  Last RSSI: `my_neighbor_info.mLastRssi`
 
 references:
 - [ublox mqtt-sn beginner guide](https://www.u-blox.com/en/blogs/insights/mqtt-beginners-guide)
 - [steve's internet guide mqttsn](http://www.steves-internet-guide.com/mqtt-sn/)
-
-### RSSI in Thread/802.15.4
-
-Few functions/data structures to keep in mind:
-- [otNeighborInfo Struct Reference](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fsdk_tz_v4.0.0%2Fstructot_neighbor_info.html&resultof=%22%72%73%73%69%22%20)
 
 
 # Localization Methods using RSSI
