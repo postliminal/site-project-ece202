@@ -123,7 +123,7 @@ references:
 # Localization Methods using RSS
 ## Initial Model: Geometrical Application
 
-Trilateration is a navigation position methodology based on simultaneous ranging from, traditionally, three trackers.Through the use of three beacons and their associated Received Signal Strength Indicator, RSSI. Trilateration can be used to estimate the location of an unknown point in space. Distances (d_one, d_two, d_three) are measured by an RSSI signal. The location of an unknown point of interest can be found by solving a system of quadratic equations. A baseline approach for Trilateration in python was used to build the intuiton and direction of this localization project. The motivating paper for this exploration is listed below and highly recommended for anyone interested in learning about this technique and overall discipline.
+Trilateration is a navigation position methodology based on simultaneous ranging from, traditionally, three trackers.Through the use of three beacons and their associated Received Signal Strength Indicator, RSS. Trilateration can be used to estimate the location of an unknown point in space. Distances (d_one, d_two, d_three) are measured by an RSS signal. The location of an unknown point of interest can be found by solving a system of quadratic equations. A baseline approach for Trilateration in python was used to build the intuiton and direction of this localization project. The motivating paper for this exploration is listed below and highly recommended for anyone interested in learning about this technique and overall discipline.
 
 
 
@@ -131,7 +131,7 @@ Trilateration is a navigation position methodology based on simultaneous ranging
 ## Model Improvement using Fingerprinting Method: 
 
 
-There are disadvantages of trilateration, however. Namely in the number of beacons required for precise accuracy, positioning with respect to the target, and susceptibility to noise. To address these concerns, inference methods were explored to leverage the advantafes of these methods - which can be calibrated to be more robust in real applications.Bayes theorem allows us to compute the most likely class for some measures RSSI.
+There are disadvantages of trilateration, however. Namely in the number of beacons required for precise accuracy, positioning with respect to the target, and susceptibility to noise. To address these concerns, inference methods were explored to leverage the advantafes of these methods - which can be calibrated to be more robust in real applications.Bayes theorem allows us to compute the most likely class for some measures RSS.
 Reference: R. Faragher and R. Harle, "Location Fingerprinting With Bluetooth Low Energy Beacons," in IEEE Journal on Selected Areas in Communications, vol. 33, no. 11, pp. 2418-2428, Nov. 2015, doi: 10.1109/JSAC.2015.2430281.
 
 
@@ -149,7 +149,7 @@ The Experimental setup:
 ![room](/ecem202a_project/images/room.png)
 
 
-Data was collected at the UCLA campus in the Kerchoff lounge. RSSI measurements were taken using BLE and OpenThread Applications at fixed distances of one meter, two meters, and three meters from the receiver for three channels. This data is is in the "Data" folder of the github.
+Data was collected at the UCLA campus in the Kerchoff lounge. RSS measurements were taken using BLE and OpenThread Applications at fixed distances of one meter, two meters, and three meters from the receiver for three channels. This data is is in the "Data" folder of the github.
 
 
 
@@ -157,5 +157,5 @@ Data was collected at the UCLA campus in the Kerchoff lounge. RSSI measurements 
 
 
 
-Above is an image demonstrating the RSSI values attained in the environment above, but at intervals of 0.5 meters from the origin up to three meters away.
+Above is an image demonstrating the RSS values attained in the environment above, but at intervals of 0.5 meters from the origin up to three meters away.
 There are additional images of data measurements in the github as well.
