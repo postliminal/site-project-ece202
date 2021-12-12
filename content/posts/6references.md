@@ -7,7 +7,7 @@ ShowReadingTime: true
 searchHidden: true
 weight: 7
 ---
-Icluded in this section are additional resources utilized throughout the process that are not in the initial project propoosal.
+Included in this section are additional resources utilized throughout the process that are not in the initial project proposal.
 
 
 * Polak, Ladislav et al. “Received Signal Strength Fingerprinting-Based Indoor Location Estimation Employing Machine Learning.” Sensors (Basel, Switzerland) vol. 21,13 4605. 5 Jul. 2021, doi:10.3390/s21134605
