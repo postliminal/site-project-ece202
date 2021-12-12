@@ -8,10 +8,6 @@ searchHidden: true
 weight: 5
 ---
 
-<!-- # System Design -->
-
-[image 1] - should be showing 3 beacons, a central device, and maybe a PC? Plus X-Y coordinates and roughly spatial distance. DO NOT INCLUDE specific ble or openthread specs/terms/concepts.
-
 
 # Contents
 
@@ -29,15 +25,14 @@ weight: 5
 
 
 - (2x) Arduino Nano Sense 33 BLE
-  - Beacon 1 MAC: 
-  <!-- - Central MAC: D4:6B:03:E9:AD:E7 -->
+  - Beacon 1 
 - (2x) nRF52840 Dongle
-  - Beacon 2 MAC: 
-  - Beacon 3 MAC: 
+  - Beacon 2 
+  - Beacon 3 
 - (1x) nRF52840 Development Kit
   - Central device (polls beacons)
 
-![hw](/ecem202a_project/images/hardware.png)
+![Hardware](/ecem202a_project/images/hardware.png)
 
 # The Software Stack
 
@@ -46,7 +41,6 @@ weight: 5
 - nRF5 SDK & nRF5 SDK for Thread and Zigbee
 - nRF Connect+Programmer for flashing code
 - CMSIS Libraries for Arm Cortex M microcontrollers
-<!-- - (... Tensorflow?) -->
 
 ### Utilities and Other tools:
 - Python + Matplotlib
@@ -60,18 +54,22 @@ Main idea:
 Beacons will use advertising channels.
 Central device will filter out the advertisements via mac address periodically. Will fit them into buffers, and perform trilateration to get location information.
 
-### TODO: fix filenames of projects/hex files
-
 Projects:
 - `software/ble_app/ble_app_beacon_arduino`
 - `software/ble_app/ble_app_beacon_dongle`
-- `software/ble_app/ble_app_beacon_dk`
 - `software/ble_app/ble_app_central_dk`
 
 _Note: hex files ready to flash can be found in Output/Release/Exe/<project_name>.hex for each project_
 
-
-## *************** TODO: explain code ^^ !
+The central device solution:
+- MAC address filtering:
+  - Set BLE advertising filters with `nrf_ble_scan_filter_set`
+  - Enabled them with `nrf_ble_scan_filters_enable`
+- Handling a filter match
+  - Using switch case `NRF_BLE_SCAN_EVT_FILTER_MATCH`
+  - Advertising report variable `p_adv` now holds contents of advertising match
+    - Access MAC address via: `p_adv->peer_addr.addr`
+    - Acess RSSI via: `p_adv->rssi`
 
 
 # Thread Application
@@ -91,8 +89,6 @@ With this network we can make the FTD the leader (capable of easily polling chil
 
 _Note: automatic network creation, commissioning and joining are beyond the scope of this project, which is why the CLI's / web GUI will be used._
 
-- [border router example](https://infocenter.nordicsemi.com/index.jsp?topic=%2Fcom.nordic.infocenter.thread_zigbee.v3.0.0%2Fthread_border_router.html)
-
 Possibility to ping all (multicast) via:
 
       > ping ff02::1
@@ -109,7 +105,15 @@ Projects:
 
 _Note: hex files ready to flash can be found in Output/Release/Exe/<project_name>.hex for each project_
 
-## *************** TODO: explain code ^^ !
+The central device solution:
+- MAC address filtering:
+  - Set BLE advertising filters with `nrf_ble_scan_filter_set`
+  - Enabled them with `nrf_ble_scan_filters_enable`
+- Handling a filter match
+  - Using switch case `NRF_BLE_SCAN_EVT_FILTER_MATCH`
+  - Advertising report variable `p_adv` now holds contents of advertising match
+    - Access MAC address via: `p_adv->peer_addr.addr`
+    - Acess RSSI via: `p_adv->rssi`
 
 references:
 - [ublox mqtt-sn beginner guide](https://www.u-blox.com/en/blogs/insights/mqtt-beginners-guide)
