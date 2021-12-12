@@ -41,4 +41,7 @@ Whilst the group was able to implement a machine learning model developed in Seg
 
 ** All scripts used to generat the work here is in the "Data" folder of the asscociated repo
 
+and our Final Presentation PPT can be found at:
+https://docs.google.com/presentation/d/1Wr8wQK3pYUVuhl7PneLKW0K7UvLv8yItETuC22PXJ2I/edit?usp=sharing
+
 [1] - Wikipedia contributors. "Mesh networking." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 9 Dec. 2021. Web. 12 Dec. 2021.
