@@ -55,7 +55,12 @@ The RSSI is represented using a byte inside of the manufacturer specific data.
 
 ![Thread stack](/ecem202a_project/images/thread_stack.png)
 
+### 802.15.4 Radio
 
+This is the radio used by thread to communicate wirelessly. Uses the ISM 2.4 GHz radio band (same as BLE). Has less channels, but exploits the same idea of using channels that are at the edges of the wifi channels to minimize interference.
+
+![802.15.4 channels+wifi](/ecem202a_project/images/802154spectrum.png)
+Source: 10.1007/978-3-642-00224-3_2
 
 ### References: 
 
