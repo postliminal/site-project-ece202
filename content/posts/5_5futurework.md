@@ -8,17 +8,11 @@ searchHidden: true
 weight: 7
 ---
 
-# Everything that we weren't able to do we can include it here nicely and explain what went wrong
+Future Experimental Work to Consider:
+- As mentioned in the results section, the group was able to re-configure a machine learning framework, test it using open - sourced data, and implement on a Nordic device using Segger. The results magnitude aligns with what was expected, but had a sign reversal that needs to be further elaborated. The discerepancy is believed to be due to a configuration issue, and not a fundamental understanding of the implementation since CMSIS' instructions were followed which also utilizes SK-learn.
 
-- branches we didn't get to combine
-  - multitask
-  - wakework recog task
+However, the SDK that operates the OpenThread application was not able to run the ML pipeline that was compiled on Segger successfully. Further work is needed in this implementation. 
 
-- any future config changes
-  - the sweeps
-  - or other sweeps
-
-- any processing that could improve results
 
 
 Aspects that were worked on include:
@@ -29,10 +23,4 @@ Aspects that were worked on include:
 - Tensorflow's TinyML library is a great resource that could also not be supported outside of the Arduino environment since many other approaches could not support it
 
 
-# include timeline? list of tasks?
-
-# automation of parameters 
-- could be directly applied to neural architecture search of future models that use peripherals?
-- would have to find/surface obsucre configs and macros
-  - then automate script that replaces text, calls gcc compiles, then launches data collection w/ hardware in the loop.
 
