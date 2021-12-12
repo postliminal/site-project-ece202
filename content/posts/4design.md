@@ -155,4 +155,5 @@ Data was collected at the UCLA campus in the Kerchoff lounge. RSSI measurements 
 
 
 
-Below is an image demonstrating the RSSI values attained in the environment above, but at intervals of 0.5 meters from the origin up to three meters away.
+Above is an image demonstrating the RSSI values attained in the environment above, but at intervals of 0.5 meters from the origin up to three meters away.
+There are additional images of data measurements in the github as well.
