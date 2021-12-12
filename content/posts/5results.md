@@ -24,11 +24,7 @@ The below image shows a snapshot of the ML model's ability to predict the distan
 
 
 
-- python plots
-  - if possible have multiple adv channels
-  - and compare aggregate/default/average
-- explanation
-- could do some signal analysis (variance, etc?)
+
 
 # 2. Localization results (BLE vs. Thread)
 
