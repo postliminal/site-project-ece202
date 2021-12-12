@@ -5,7 +5,7 @@ draft: false
 comments: false
 ShowReadingTime: true
 searchHidden: true
-weight: 7
+weight: 8
 ---
 Included in this section are additional resources utilized throughout the process that are not in the initial project proposal.
 
